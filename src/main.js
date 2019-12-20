@@ -3,8 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Axios from 'axios'
+import './assets/css/global.css'
+import './assets/fonts/iconfont.css'
 
+Vue.prototype.$http = Axios
+Axios.defaults.baseURL = 'http://api.xiaomadagege.cn:8800/api/private/v1/'
 Vue.config.productionTip = false
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({
