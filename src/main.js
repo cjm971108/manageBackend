@@ -14,6 +14,13 @@ Axios.defaults.baseURL = 'http://api.xiaomadagege.cn:8800/api/private/v1/'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
+// 通过axios请求拦截器添加token，保证拥有获取数据的权限
+Axios.interceptors.request.use(config => {
+  // 为请求头对象，添加token验证的Authorization字段
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
