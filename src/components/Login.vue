@@ -73,7 +73,6 @@ export default {
         window.sessionStorage.setItem('token', res.data.token)
         // 导航至/home
         this.$router.push('/home')
-        console.log(1)
       })
     },
     reset() {
