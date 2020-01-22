@@ -8,11 +8,13 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Axios from 'axios'
 import './assets/css/global.css'
 import './assets/fonts/iconfont.css'
+import ZkTable from 'vue-table-with-tree-grid'
 
 Vue.prototype.$http = Axios
 Axios.defaults.baseURL = 'http://api.xiaomadagege.cn:8800/api/private/v1/'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(ZkTable)
 
 // 通过axios请求拦截器添加token，保证拥有获取数据的权限
 Axios.interceptors.request.use(config => {
